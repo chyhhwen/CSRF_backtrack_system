@@ -1,0 +1,220 @@
+body
+{
+    margin:0px;
+    border:0px;
+    background-image:url('./images/index.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    color:white;
+}
+h1,h2,h3,h4,h5,h6
+{
+    margin:0%;
+}
+a
+{
+    text-decoration: none;
+    color:white;
+}
+a:hover
+{
+    color:#bb5a3a;
+}
+.error-page
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.error-page h1
+{
+    font-size: 30vh;
+    font-weight: bold;
+    position: relative;
+    margin: -8vh 0 0;
+    padding: 0;
+}
+.error-page h1:after
+{
+    content: attr(data-h1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.25);
+}
+.error-page h1 + p
+{
+    color: #d6d6d6;
+    font-size: 8vh;
+    font-weight: bold;
+    line-height: 10vh;
+    max-width: 600px;
+    position: relative;
+}
+nav
+{
+    height: 80px;
+    backdrop-filter: blur(5px);
+    position: sticky;
+    top:0;
+    font-weight:bold;
+    font-size:200%;
+    display: flex;
+    align-items: center;
+    border-bottom:1px solid rgb(202, 201, 201);
+    z-index: 1;
+}
+nav span
+{
+    padding-left:5%;
+    padding-right:60%;
+}
+nav a
+{
+    padding-left:1%;
+    padding-right:1%;
+    font-size:60%;
+    text-decoration:none;
+    color:black;
+}
+nav a:hover
+{
+    color:#bb5a3a;
+}
+.login-page
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.login-page .put
+{
+    width: 25vw;
+    backdrop-filter: blur(5px);
+    border-radius:2em;
+    border:1px solid;
+}
+.put input[type='text']
+{
+    width: 20vw;
+    height:7vh;
+    font-size: 150%;
+    background: none;
+    border-radius:2em;
+    margin-top: 0.5vh;
+    margin-bottom:0.5em;
+    color:white;
+}
+.put input[type='submit']
+{
+    width: 5vw;
+    height:7vh;
+    font-size: 150%;
+    background: none;
+    border-radius:2em;
+    margin-top: 0.5vh;
+    margin-bottom:0.5em;
+    color:white;
+}
+.put input[type='button']
+{
+    width: 5vw;
+    height:7vh;
+    font-size: 150%;
+    background: none;
+    border-radius:2em;
+    margin-top: 0.5vh;
+    margin-bottom:0.5em;
+    color:white;
+}
+.put input[type='password']
+{
+    width: 20vw;
+    height:7vh;
+    font-size: 150%;
+    background: none;
+    border-radius:2em;
+    margin-top: 0.5vh;
+    margin-bottom:0.5em;
+    color:white;
+}
+.put span
+{
+    width: 5vw;
+    font-size: 180%;
+    font-weight: bold;
+    margin-top: 0.5vh;
+    margin-bottom:0.5em;
+}
+.login-page .put1
+{
+    width: 25vw;
+    backdrop-filter: blur(5px);
+    border-radius:2em;
+    border:1px solid;
+}
+.put1 input[type='text']
+{
+    width: 20vw;
+    height:7vh;
+    font-size: 150%;
+    background: none;
+    border-radius:2em;
+    margin-top: 0.5vh;
+    margin-bottom:0.5em;
+    color:white;
+}
+.put1 input[type='submit']
+{
+    width: 5vw;
+    height:7vh;
+    font-size: 150%;
+    background: none;
+    border-radius:2em;
+    margin-top: 0.5vh;
+    margin-bottom:0.5em;
+    color:white;
+}
+.put1 input[type='button']
+{
+    width: 5vw;
+    height:7vh;
+    font-size: 150%;
+    background: none;
+    border-radius:2em;
+    margin-top: 0.5vh;
+    margin-bottom:0.5em;
+    color:white;
+}
+.put1 input[type='password']
+{
+    width: 20vw;
+    height:7vh;
+    font-size: 150%;
+    background: none;
+    border-radius:2em;
+    margin-top: 0.5vh;
+    margin-bottom:0.5em;
+    color:white;
+}
+.put1 span
+{
+    width: 5vw;
+    font-size: 180%;
+    font-weight: bold;
+    margin-top: 0.5vh;
+    margin-bottom:0.5em;
+}
