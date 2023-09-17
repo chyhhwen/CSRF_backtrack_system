@@ -41,6 +41,12 @@ class router
                     }
                 case '/hack':
                     return require "./views/hack.php";
+                case '/logout':
+                    $sql = new sql( );
+                    $sql -> config("root","","temp","token");
+                    $sql -> del("user",@$_SESSION['user']);
+                    session_destroy();
+                    break;
                 case '/login':
                     include "./defense/login.php";
                     $login = new login();
@@ -49,6 +55,12 @@ class router
                         if($login ->check(@$_POST['user'],@$_POST['pass']))
                         {
                             $_SESSION['index'] = true;
+                            $_SESSION['user'] = @$_POST['user'];
+                            $sql = new sql( );
+                            $http = new http();
+                            $sql -> config("root","","temp","token");
+                            $sql -> put_data(['',@$_SESSION['user'],md5($http->time()),$http->time()]);
+                            $sql -> add("(?,?,?,?)");
                         }
                         header('Location: http://localhost/');
                         exit();

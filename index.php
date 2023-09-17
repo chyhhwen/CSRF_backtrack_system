@@ -36,6 +36,7 @@
                 <html>
                     <head>
                     <link rel="stylesheet" href="./public/index.css">
+                    <script type="text/javascript" src="./public/time.js"></script> 
                     <meta charset="UTF-8">
                     <title>ChiXiao</title>
                 </head>
@@ -49,7 +50,6 @@
                 <html>
                     <head>
                     <link rel="stylesheet" href="./public/index.css">
-                    <script type="text/javascript" src="./public/index.js"></script> 
                     <meta charset="UTF-8">
                     <title>ChiXiao</title>
                 </head>

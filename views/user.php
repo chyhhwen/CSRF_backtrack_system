@@ -8,7 +8,7 @@ return"
                     <input type='text' name='money' id='money'>
                     <span>目標</span>
                     <input type='text' name='user' id='user'>
-                    <input type='submit' name='pay' value='付款'>
+                    <input type='submit' name='pay' value='付款' id='pay'>
                </div>
             </form>
         </div>

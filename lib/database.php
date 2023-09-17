@@ -125,5 +125,25 @@ class sql
         unset($pdo);
         return $check;
     }
+    public function del($val , $id)
+    {
+        $pdo = $this->conn();
+        $sql = "DELETE FROM `". $this->db ."` WHERE `". $val ."` = \"". $id ."\"";
+        echo $sql;
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        try
+        {
+            if (!($stmt->rowCount() > 0))
+            {
+                die();
+            }
+        }
+        catch (PDOException $e)
+        {
+            die();
+        }
+        unset($pdo);
+    }
 }
 ?>
