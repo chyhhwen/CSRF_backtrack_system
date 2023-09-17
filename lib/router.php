@@ -78,10 +78,37 @@ class router
                         "user" => $_POST['user']
                     ];
                     $time = $http -> time();
-                    $sql -> config("root","","temp","order");
-                    $sql -> put_data(['',$data['money'],$data['user'],$time]);
-                    $sql -> add("(?,?,?,?)");
+                    $sql -> config("root","","temp","ordtemp");
+                    $sql -> put_data(['',$data['money'],@$_SESSION['user'],$data['user'],$time]);
+                    $sql -> add("(?,?,?,?,?)");
                     header('Location: http://localhost/');
+                    break;
+                case '/gmail':
+                    return require "./views/gmail.php";
+                case '/gmail_check':
+                    $sql = new sql();
+                    $http = new http();
+                    if(isset($_POST['true']))
+                    {
+                        $sql -> config("root","","temp","ordtemp");
+                        $sql -> put_data(['id','money','send','receive','time']);
+                        $temp_data = $sql -> sel("chyhhwen");
+                        $sql -> config("root","","temp","order");
+                        foreach($temp_data as $key => $val)
+                        {
+                            $sql -> put_data(['',$temp_data[$key]['money'],$temp_data[$key]['send'],$temp_data[$key]['receive'],$http->time()]);
+                            $sql -> add("(?,?,?,?,?)");
+                        }
+                        $sql -> config("root","","temp","ordtemp");
+                        $sql -> del("send",@$_POST['user']);
+                        header('Location: http://localhost/');
+                    }
+                    else
+                    {
+                        $sql -> config("root","","temp","ordtemp");
+                        $sql -> del("send",@$_POST['user']);
+                        header('Location: http://localhost/');
+                    }
                     break;
                 default:
                     http_response_code(404);

@@ -17,7 +17,7 @@ window.onload=()=>
                 {
                     alert("閒置過久，自動登出")
                     second = 0;
-                    window.location.href = "/";
+                    window.location.href = "/gmail";
                 }
             };
             xhr.send();

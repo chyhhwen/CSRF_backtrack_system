@@ -60,6 +60,20 @@ a:hover
     max-width: 600px;
     position: relative;
 }
+table
+{
+    border:1px solid #000;
+    font-family: 微軟正黑體;
+    font-size:16px;
+    border:1px solid #000;
+    text-align:center;
+    border-collapse:collapse;
+}
+td
+{
+    border:1px solid #000;
+    padding:1vw;
+}
 nav
 {
     height: 80px;

@@ -49,10 +49,10 @@ class sql
         }
         unset($pdo);
     }
-    public function sel()
+    public function sel($user)
     {
         $pdo = $this->conn();
-        $sql = "SELECT * FROM `". $this->db ."`";
+        $sql = "SELECT * FROM `". $this->db ."` WHERE `send` = \"". $user ."\"";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
         $comments = array();
@@ -62,8 +62,10 @@ class sql
             {
                 array_push($comments, array(
                     "id" => $row[$this->field[0]],
-                    "name" => $row[$this->field[1]],
-                    "data" => $row[$this->field[2]]
+                    "money" => $row[$this->field[1]],
+                    "send" => $row[$this->field[2]],
+                    "receive" => $row[$this->field[3]],
+                    "time" => $row[$this->field[4]]
                 ));
             }
         }
@@ -129,7 +131,6 @@ class sql
     {
         $pdo = $this->conn();
         $sql = "DELETE FROM `". $this->db ."` WHERE `". $val ."` = \"". $id ."\"";
-        echo $sql;
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
         try
